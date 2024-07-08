@@ -34,6 +34,21 @@ function App() {
 	</div>
 </header>
     {/* End Header */}
+    {/* Start Hero */}
+    <section className="py-6 bg-black text-gray-800">
+	<div className="container flex flex-col items-center mt-14 justify-center p-4 mx-auto sm:p-10 w-full">
+		<div className="flex flex-row flex-wrap-reverse justify-center mt-8 w-full">
+			<div className="flex flex-col justify-center w-full px-8 mt-14 pb-0 text-center rounded-md bg-white text-gray-500">
+				<img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500" style={{width:"150px", height:"150px"}} src="https://source.unsplash.com/100x100/?portrait?5" />
+				<div className="flex-1 my-4 mt-8">
+					<p className="text-xl font-semibold leading-snug"> I have a keen interest in Web Development, I possess a foundational understanding of ObjectOriented Programming (OOPs) concepts. Eager to apply and enhance my skills, I am actively seeking entry-level opportunities to
+          contribute to real-world projects and expand my knowledge in the dynamic field of computer science.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+    {/* End Hero */}
     </>
   );
 }
