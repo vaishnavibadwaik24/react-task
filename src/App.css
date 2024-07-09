@@ -37,4 +37,26 @@
   }
 }
 
+@keyframes borderAnimation {
+  0% {
+    border: 5px solid #f00; /* Start with red border */
+  }
+  25% {
+    border: 5px solid #0f0; /* Transition to green border */
+  }
+  50% {
+    border: 5px solid #00f; /* Transition to blue border */
+  }
+  75% {
+    border: 5px solid #ff0; /* Transition to yellow border */
+  }
+  100% {
+    border: 5px solid #f00; /* End with red border */
+  }
+}
+
+.border-animation {
+  animation: borderAnimation 5s infinite; /* 5s for the duration, infinite for continuous looping */
+  border-radius: 50%; /* Optional: to make the border rounded */
+}
 

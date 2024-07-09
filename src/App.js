@@ -58,7 +58,12 @@ const Home = () => (
   <div className="container flex flex-col items-center mt-14 justify-center p-4 mx-auto sm:p-10 w-full">
     <div className="flex flex-row flex-wrap-reverse justify-center mt-8 w-full">
       <div className="flex flex-col justify-center w-full px-8 py-5 mt-14 text-center rounded-md bg-white text-gray-500 max-w-3xl">
-        <img alt="Photo" className="self-center flex-shrink-0 w-24 h-24 -mt-24 bg-center bg-cover rounded bg-gray-500" style={{ width: "140px", height: "150px" }} src={profile} />
+      <img 
+          alt="Photo" 
+          className="self-center flex-shrink-0 w-24 h-24 -mt-24 bg-center bg-cover rounded bg-gray-500 border-animation" 
+          style={{ width: "140px", height: "150px" }} 
+          src={profile} 
+        />
         <div className="flex-1 my-4 mt-8">
           <p className="text-xl font-semibold leading-snug">I have a keen interest in Web Development, I possess a foundational understanding of ObjectOriented Programming (OOPs) concepts. Eager to apply and enhance my skills, I am actively seeking entry-level opportunities to contribute to real-world projects and expand my knowledge in the dynamic field of computer science.</p>
         </div>
