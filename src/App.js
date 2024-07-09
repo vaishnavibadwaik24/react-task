@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
+import profile from './images/profile.jpg'
 import g5 from './images/g5.png';
 import g1 from './images/g1.png';
 import g3 from './images/g3.png';
@@ -18,17 +19,17 @@ function App() {
             </li>
             <ul className="items-stretch hidden space-x-3 lg:flex">
               <li className="flex">
-                <Link to="/" className="flex items-center px-4 -mb-1">Home</Link>
+                <a href="/" className="flex items-center px-4 -mb-1">Home</a>
               </li>
               <li className="flex">
-                <Link to="/about" className="flex items-center px-4 -mb-1">About Us</Link>
+                <a href="#About" className="flex items-center px-4 -mb-1">About Us</a>
               </li>
               <li className="flex">
-                <Link to="/contact" className="flex items-center px-4 -mb-1">Contact Us</Link>
+                <a href="#Contact" className="flex items-center px-4 -mb-1">Contact Us</a>
               </li>
             </ul>
             <div className="items-center flex-shrink-0 hidden lg:flex">
-              <Link to="/projects" className="self-center px-8 py-3 font-semibold rounded dark:bg-white dark:text-black">Projects</Link>
+              <a href="#Project" className="self-center px-8 py-3 font-semibold rounded dark:bg-white dark:text-black">Projects</a>
             </div>
             <button className="p-4 lg:hidden">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 dark:text-gray-800">
@@ -50,22 +51,23 @@ function App() {
 const Home = () => (
   <>
     {/* Start About */}
-    <section className="py-6 bg-black text-gray-800">
-      <div className="container flex flex-col items-center mt-14 justify-center p-4 mx-auto sm:p-10 w-full">
-        <div className="flex flex-row flex-wrap-reverse justify-center mt-8 w-full">
-          <div className="flex flex-col justify-center w-full px-8 mt-14 pb-0 text-center rounded-md bg-white text-gray-500">
-            <img alt="" className="self-center flex-shrink-0 w-24 h-24 -mt-12 bg-center bg-cover rounded-full bg-gray-500" style={{ width: "150px", height: "150px" }} src="https://source.unsplash.com/100x100/?portrait?5" />
-            <div className="flex-1 my-4 mt-8">
-              <p className="text-xl font-semibold leading-snug">I have a keen interest in Web Development, I possess a foundational understanding of ObjectOriented Programming (OOPs) concepts. Eager to apply and enhance my skills, I am actively seeking entry-level opportunities to contribute to real-world projects and expand my knowledge in the dynamic field of computer science.</p>
-            </div>
-          </div>
+    <section id='About' className="py-6 bg-black text-gray-800">
+  <div className="container flex flex-col items-center mt-14 justify-center p-4 mx-auto sm:p-10 w-full">
+    <div className="flex flex-row flex-wrap-reverse justify-center mt-8 w-full">
+      <div className="flex flex-col justify-center w-full px-8 py-5 mt-14 text-center rounded-md bg-white text-gray-500 max-w-3xl">
+        <img alt="Photo" className="self-center flex-shrink-0 w-24 h-24 -mt-24 bg-center bg-cover rounded bg-gray-500" style={{ width: "140px", height: "150px" }} src={profile} />
+        <div className="flex-1 my-4 mt-8">
+          <p className="text-xl font-semibold leading-snug">I have a keen interest in Web Development, I possess a foundational understanding of ObjectOriented Programming (OOPs) concepts. Eager to apply and enhance my skills, I am actively seeking entry-level opportunities to contribute to real-world projects and expand my knowledge in the dynamic field of computer science.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     {/* End About */}
+
     {/* Start Project */}
-    <section className="text-black body-font">
-      <h2 className="text-3xl font-semibold tracking-wide pt-16 ml-8">Check my projects</h2>
+    <section id='Project' className="text-black body-font">
+      <h2 className="text-3xl font-semibold tracking-wide pt-16 ml-8">Check my Projects</h2>
       <div className="container px-5 py-16 mx-auto">
         <div className="flex flex-wrap -m-4">
           {/* Card 1 */}
@@ -129,7 +131,7 @@ const Home = () => (
                 <h1 className="title-font text-3xl font-bold text-white mb-6">Discover all my Projects</h1>
                 <p className="leading-relaxed text-white text-lg mb-6">I am a Web Developer who loves to create websites.</p>
                 <div className="flex items-center justify-center flex-wrap pb-16">
-                  <Link to="/projects" className="text-white font-medium inline-flex items-center md:mb-2 lg:mb-0">More
+                  <Link to="/Projects" className="text-white font-medium inline-flex items-center md:mb-2 lg:mb-0">More
                     <svg className="w-4 h-4 ml-2" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M5 12h14"></path>
                       <path d="M12 5l7 7-7 7"></path>
