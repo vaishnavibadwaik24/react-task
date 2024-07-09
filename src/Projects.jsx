@@ -12,7 +12,7 @@ export default function Projects() {
             <div className="p-4 md:w-1/4">
               <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  className="lg:h-48 md:h-36 object-cover object-center"
+                  className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white"
                   src={g4}
                   alt="Image"
                 />
@@ -52,7 +52,7 @@ export default function Projects() {
             <div className="p-4 md:w-1/4">
               <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
                 <img
-                  className="lg:h-48 md:h-36 w-full object-cover object-center"
+                  className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white"
                   src={g2}
                   alt="Images"
                 />

@@ -54,7 +54,7 @@ function App() {
 const Home = () => (
   <>
     {/* Start About */}
-    <section id='About' className="py-6 bg-black text-gray-800">
+    <section id='About' className="py-20 bg-cyan-950 text-gray-800">
   <div className="container flex flex-col items-center mt-14 justify-center p-4 mx-auto sm:p-10 w-full">
     <div className="flex flex-row flex-wrap-reverse justify-center mt-8 w-full">
       <div className="flex flex-col justify-center w-full px-8 py-5 mt-14 text-center rounded-md bg-white text-gray-500 max-w-3xl">
@@ -76,7 +76,7 @@ const Home = () => (
           {/* Card 1 */}
           <div className="p-4 md:w-1/4">
             <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
-              <img className="lg:h-48 md:h-36 object-cover object-center" style={{ width: "100%", height: 225 }} src={g5} alt="Image" />
+              <img className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white" style={{ width: "100%", height: 225 }} src={g5} alt="Image" />
               <div className="p-6 pt-0">
                 <h1 className="title-font text-lg font-bold text-gray-900 mb-3">FastFruits</h1>
                 <p className="leading-relaxed mb-3">FastFruits is a website that serve as a digital platform for shopping. Developed using Laravel, Javascript and Bootstrap.</p>
@@ -94,7 +94,7 @@ const Home = () => (
           {/* Card 2 */}
           <div className="p-4 md:w-1/4">
             <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
-              <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={g1} alt="Images" />
+              <img className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white" src={g1} alt="Images" />
               <div className="p-6">
                 <h1 className="title-font text-lg font-bold text-gray-900 mb-3">ManaliTour</h1>
                 <p className="leading-relaxed mb-3">ManaliTour is a sleek landing page, developed using Tailwind CSS and HTML for a modern look.</p>
@@ -112,7 +112,7 @@ const Home = () => (
           {/* Card 3 */}
           <div className="p-4 md:w-1/4">
             <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
-              <img className="lg:h-48 md:h-36 w-full object-cover object-center" src={g3} alt="Images" />
+              <img className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white" src={g3} alt="Images" />
               <div className="p-6">
                 <h1 className="title-font text-lg font-bold text-gray-900 mb-3">Dine Out | Restro & Cafe</h1>
                 <p className="leading-relaxed mb-3">Dine Out | Restro & Cafe is a landing page. Developed using Bootstrap, Tailwind CSS and HTML.</p>
@@ -129,7 +129,7 @@ const Home = () => (
           </div>
           {/* Card 4 */}
           <div className="p-4 md:w-1/4 text-center">
-            <div className="h-full bg-black rounded-lg overflow-hidden py-16">
+            <div className="h-full bg-cyan-950 rounded-lg overflow-hidden py-16">
               <div className="p-6">
                 <h1 className="title-font text-3xl font-bold text-white mb-6">Discover all my Projects</h1>
                 <p className="leading-relaxed text-white text-lg mb-6">I am a Web Developer who loves to create websites.</p>
@@ -183,13 +183,13 @@ const Home = () => (
       </div>
       <button
         type="button"
-        className="bg-black text-white px-6 py-2 rounded-full self-start ml-20"
+        className="bg-cyan-950 text-white px-6 py-2 rounded-full self-start ml-20"
       >
         Send Message
       </button>
     </form>
     {/* Right Side Content */}
-    <div className="w-full md:w-1/2 bg-black text-white p-6 rounded-xl space-y-6">
+    <div className="w-full md:w-1/2 bg-cyan-950 text-white p-6 rounded-xl space-y-6">
       <h2 className="text-2xl font-bold px-8 mt-10">Contact Information</h2>
       <p className='px-8'>Fill up the form and will get back to you within 24 hours.</p>
       <div className="space-y-4">
@@ -210,12 +210,64 @@ const Home = () => (
     </div>
   </div>
 </section>
-
-
-
-
-
     {/* End Contact */}
+
+    {/* Start Footer */}
+    <footer className="bg-gray-100">
+  <div className="container flex flex-col p-4 mx-auto md:p-8 lg:flex-row divide-gray-600 items-center justify-center">
+    <div className="flex flex-col justify-center pt-6 lg:pt-0">
+      <div className="flex justify-center space-x-4">
+        <span className="inline-flex pt-4">
+          <a
+            className="ml-3 text-gray-500"
+            href="https://www.linkedin.com/in/vaishnavib24/"
+            title="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-950 animate-bounce">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="0"
+                className="w-5 h-5 text-white"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="none"
+                  d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                ></path>
+                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+              </svg>
+            </div>
+          </a>
+        </span>{" "}
+        &nbsp;
+        <span className="inline-flex pt-4">
+          <a
+            rel="noopener noreferrer"
+            href="https://github.com/vaishnavibadwaik24"
+            title="GitHub"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-gray-50 bg-cyan-950 animate-bounce"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              className="w-5 h-5"
+            >
+              <path d="M10.9,2.1c-4.6,0.5-8.3,4.2-8.8,8.7c-0.5,4.7,2.2,8.9,6.3,10.5C8.7,21.4,9,21.2,9,20.8v-1.6c0,0-0.4,0.1-0.9,0.1 c-1.4,0-2-1.2-2.1-1.9c-0.1-0.4-0.3-0.7-0.6-1C5.1,16.3,5,16.3,5,16.2C5,16,5.3,16,5.4,16c0.6,0,1.1,0.7,1.3,1c0.5,0.8,1.1,1,1.4,1 c0.4,0,0.7-0.1,0.9-0.2c0.1-0.7,0.4-1.4,1-1.8c-2.3-0.5-4-1.8-4-4c0-1.1,0.5-2.2,1.2-3C7.1,8.8,7,8.3,7,7.6C7,7.2,7,6.6,7.3,6 c0,0,1.4,0,2.8,1.3C10.6,7.1,11.3,7,12,7s1.4,0.1,2,0.3C15.3,6,16.8,6,16.8,6C17,6.6,17,7.2,17,7.6c0,0.8-0.1,1.2-0.2,1.4 c0.7,0.8,1.2,1.8,1.2,3c0,2.2-1.7,3.5-4,4c0.6,0.5,1,1.4,1,2.3v2.6c0,0.3,0.3,0.6,0.7,0.5c3.7-1.5,6.3-5.1,6.3-9.3 C22,6.1,16.9,1.4,10.9,2.1z"></path>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+    {/* End Footer */}
 
   </>
 );
