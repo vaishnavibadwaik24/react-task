@@ -1,14 +1,53 @@
-import React from 'react';
+import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
-import profile from './images/profile.jpg'
+import profile from './images/profile.jpg';
 import g5 from './images/g5.png';
 import g1 from './images/g1.png';
 import g3 from './images/g3.png';
 import Projects from './Projects.jsx';
-import resume from './images/resume.png'
+import resume from './images/resume.png';
+import emailjs from 'emailjs-com';
+import emoji from './images/emoji.png'
 
 function App() {
+
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const templateData = {
+      from_name: name,
+      from_email: email,
+      message: message,
+      to_name: 'Vaishnavi',
+    };
+
+    emailjs
+      .send(
+        "service_x3b7gkr", // EmailJS service ID
+        "contact_form", // EmailJS template ID
+        templateData,
+        'c4VxPc0Bgu3nLlkM5' // EmailJS user ID
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          alert("Message Sent");
+          setName(''); // Reset form fields
+          setEmail('');
+          setMessage('');
+        },
+        (error) => {
+          console.error("FAILED...", error);
+          alert("Error sending message");
+        }
+      );
+  };
+
   return (
     <Router>
       <>
@@ -43,7 +82,7 @@ function App() {
 
         {/* End Header */}
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home name={name} email={email} message={message} setName={setName} setEmail={setEmail} setMessage={setMessage} handleSubmit={handleSubmit} />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </>
@@ -51,7 +90,7 @@ function App() {
   );
 }
 
-const Home = () => (
+const Home = ({ name, email, message, setName, setEmail, setMessage, handleSubmit }) => (
   <>
     {/* Start About */}
     <section id='About' className="py-20 bg-cyan-950 text-gray-800">
@@ -81,8 +120,8 @@ const Home = () => (
           {/* Card 1 */}
           <div className="p-4 md:w-1/4">
             <div className="h-full border-opacity-60 rounded-lg overflow-hidden">
-              <img className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white" style={{ width: "100%", height: 225 }} src={g5} alt="Image" />
-              <div className="p-6 pt-0">
+              <img className="lg:h-48 md:h-36 object-cover object-center transition duration-300 transform hover:shadow-2xl hover:border-4 hover:border-white" style={{ width: "100%" }} src={g5} alt="Image" />
+              <div className="p-6 pt-6">
                 <h1 className="title-font text-lg font-bold text-gray-900 mb-3">FastFruits</h1>
                 <p className="leading-relaxed mb-3">FastFruits is a website that serve as a digital platform for shopping. Developed using Laravel, Javascript and Bootstrap.</p>
                 <div className="flex items-center flex-wrap">
@@ -156,65 +195,83 @@ const Home = () => (
 
     {/* Start Contact */}
     <section id='Contact' className="container mx-auto py-16 px-4 md:px-8 lg:px-16">
-      <h1 className="text-5xl font-bold pb-20 pt-10 underline text-center">Say Hi!</h1>
-  <div className="w-full max-w-5xl mx-auto p-8 space-y-6 rounded-xl bg-white shadow-lg flex flex-col md:flex-row">
-    {/* Left Side Form */}
-    <form noValidate className="w-full md:w-2/3 p-6 space-y-6">
-      <div className="flex flex-col md:flex-row gap-6">
-        <div className="w-full">
-          <label className="block mb-1 text-gray-700">Name</label>
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-80 border-b-2 border-gray-300 focus:border-black focus:outline-none py-2"
-          />
+    <div className="flex justify-center items-center pb-20 pt-8">
+    <h1 className="text-5xl font-bold underline text-center">Say Hi!</h1>
+    <img src={emoji} alt="Emoji" style={{ height: "70px", width:"70px", marginLeft: "10px" }} />
+  </div>
+      <div className="w-full max-w-5xl mx-auto p-8 space-y-6 rounded-xl bg-white shadow-lg flex flex-col md:flex-row">
+        {/* Left Side Form */}
+        <form onSubmit={handleSubmit} className="w-full md:w-2/3 p-6 space-y-6">
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="w-full">
+              <label htmlFor="name" className="block mb-1 text-gray-700">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                className="w-full md:w-80 border-b-2 border-gray-300 focus:border-black focus:outline-none py-2"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
+          </div>
+          <div className="w-full">
+            <label htmlFor="email" className="block mb-1 text-gray-700">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              className="w-full md:w-80 border-b-2 border-gray-300 focus:border-black focus:outline-none py-2"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+          <div className="w-full">
+            <label htmlFor="message" className="block mb-1 text-gray-700">Your Message</label>
+            <textarea
+              rows="4"
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              className="w-full md:w-80 border-b-2 border-gray-300 focus:border-black focus:outline-none py-2"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            className="bg-cyan-950 hover:bg-cyan-900 text-white px-6 py-2 rounded-full self-start ml-20"
+          >
+            Send Message
+          </button>
+        </form>
+        {/* Right Side Content */}
+        <div className="w-full md:w-1/2 bg-cyan-950 text-white p-6 rounded-xl space-y-6">
+          <h2 className="text-2xl font-bold px-8 mt-10">Contact Information</h2>
+          <p className='px-8'>Fill up the form and will get back to you within 24 hours.</p>
+          <div className="space-y-4">
+            <p className="flex items-center px-8">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 mr-2 sm:mr-5">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
+              </svg>
+              <span>8805881762</span>
+            </p>
+            <p className="flex items-center px-8">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-7 h-7 mr-2 sm:mr-5">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
+              </svg>
+              <span>vaishnavib2428@gmail.com</span>
+            </p>
+          </div>
         </div>
       </div>
-      <div className="w-full">
-        <label className="block mb-1 text-gray-700">Email</label>
-        <input
-          type="email"
-          placeholder="Your Email"
-          className="w-80 border-b-2 border-gray-300 focus:border-black focus:outline-none py-2"
-        />
-      </div>
-      <div className="w-full">
-        <label className="block mb-1 text-gray-700">Your Message</label>
-        <textarea
-          rows="4"
-          placeholder="Your Message"
-          className="w-80 border-b-2 border-gray-300 focus:border-black focus:outline-none py-2"
-        ></textarea>
-      </div>
-      <button
-        type="button"
-        className="bg-cyan-950 text-white px-6 py-2 rounded-full self-start ml-20"
-      >
-        Send Message
-      </button>
-    </form>
-    {/* Right Side Content */}
-    <div className="w-full md:w-1/2 bg-cyan-950 text-white p-6 rounded-xl space-y-6">
-      <h2 className="text-2xl font-bold px-8 mt-10">Contact Information</h2>
-      <p className='px-8'>Fill up the form and will get back to you within 24 hours.</p>
-      <div className="space-y-4">
-        <p className="flex items-center px-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-6 h-6 mr-2 sm:mr-5">
-						<path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path>
-					</svg>
-          <span>8805881762</span>
-        </p>
-        <p className="flex items-center px-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-7 h-7 mr-2 sm:mr-5">
-						<path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-						<path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-					</svg>
-          <span>vaishnavib2428@gmail.com</span>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
     {/* End Contact */}
 
     {/* Start Footer */}

@@ -62,7 +62,7 @@ export default function Projects() {
                   </h1>
                   <p className="leading-relaxed mb-3">
                     WhiteFalcon Publishing is a clone website. Developed using
-                    Tailwind CSS and HTML.
+                    Tailwind CSS and HTML for a modern look.
                   </p>
                   <div className="flex items-center flex-wrap">
                     <a
