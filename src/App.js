@@ -10,6 +10,15 @@ import resume from './images/resume.png';
 import emailjs from 'emailjs-com';
 import emoji from './images/emoji.png'
 
+import laravel from "./icons/laravel.png";
+import react from "./icons/react.svg";
+import php from "./icons/php.svg";
+import html from "./icons/html.svg";
+import css from "./icons/css.svg";
+import bootstrap from "./icons/bootstrap.svg";
+import tailwind from "./icons/tailwind.svg";
+import javascript from "./icons/javascript.svg";
+
 function App() {
 
   const [name, setName] = useState('');
@@ -79,7 +88,6 @@ function App() {
     </button>
   </div>
 </header>
-
         {/* End Header */}
         <Routes>
           <Route path="/" element={<Home name={name} email={email} message={message} setName={setName} setEmail={setEmail} setMessage={setMessage} handleSubmit={handleSubmit} />} />
@@ -111,6 +119,120 @@ const Home = ({ name, email, message, setName, setEmail, setMessage, handleSubmi
   </div>
 </section>
     {/* End About */}
+
+    {/* Skills Section */}
+    <div id="Skills" className="section">
+        <section className="text-gray-600 bg-white body-font">
+          <div className="container px-5 py-24 mx-auto">
+            <div className="text-center mb-20">
+              <h1 className="title-font sm:text-4xl text-3xl mb-4 underline font-bold text-black mb-4">
+                Technical Skills
+              </h1>
+            </div>
+            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+              <div className="p-2 sm:w-1/4 w-full">
+                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-red-500/50 relative group">
+                  <img
+                    src={laravel}
+                    style={{ width: "50px", height: "50px" }}
+                    alt="laravel"
+                  />
+                  <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    Laravel
+                </span>
+                </div>
+              </div>
+              <div className="p-2 sm:w-1/4 w-full">
+                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-400/50 relative group">
+                  <img
+                    src={react}
+                    style={{ width: "60px", height: "60px" }}
+                    alt="react"
+                  />
+                  <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    React
+                </span>
+                </div>
+              </div>
+              <div className="p-2 sm:w-1/4 w-full">
+                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-orange-500/50 relative group">
+                  <img
+                    src={html}
+                    style={{ width: "50px", height: "50px" }}
+                    alt="html"
+                  />
+                  <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    HTML
+                  </span>
+                </div>
+              </div>
+            <div className="p-2 sm:w-1/4 w-full">
+              <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-indigo-500/50 relative group">
+                <img
+                  src={bootstrap}
+                  style={{ width: "70px", height: "70px" }}
+                  alt="bootstrap"
+                />
+                <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                  Bootstrap
+                </span>
+              </div>
+            </div>
+            </div>
+            <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+              <div className="p-2 sm:w-1/4 w-full">
+                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-500/50 relative group">
+                  <img
+                    src={php}
+                    style={{ width: "70px", height: "70px" }}
+                    alt="php"
+                  />
+                  <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    PHP
+                </span>
+                </div>
+              </div>
+              <div className="p-2 sm:w-1/4 w-full">
+                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-yellow-300/50 relative group">
+                  <img
+                    src={javascript}
+                    style={{ width: "60px", height: "60px" }}
+                    alt="javascript"
+                  />
+                  <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    Javascript
+                </span>
+                </div>
+              </div>
+              <div className="p-2 sm:w-1/4 w-full">
+                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-blue-700/50 relative group">
+                  <img
+                    src={css}
+                    style={{ width: "50px", height: "50px" }}
+                    alt="css"
+                  />
+                  <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    CSS
+                </span>
+                </div>
+              </div>
+              <div className="p-2 sm:w-1/4 w-full">
+                <div className="rounded flex p-4 h-full items-center justify-center transition ease-in duration-500 transform hover:scale-110 shadow-lg shadow-cyan-600/50 relative group">
+                  <img
+                    src={tailwind}
+                    style={{ width: "60px", height: "60px" }}
+                    alt="tailwind"
+                  />
+                  <span className="absolute bottom-0 mb-2 text-black font-bold text-sm opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    Tailwind
+                </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      {/* End Skills */}
 
     {/* Start Project */}
     <section id='Project' className="text-black body-font">
@@ -173,7 +295,14 @@ const Home = ({ name, email, message, setName, setEmail, setMessage, handleSubmi
           </div>
           {/* Card 4 */}
           <div className="p-4 md:w-1/4 text-center">
-            <div className="h-full bg-cyan-950 rounded-lg overflow-hidden py-16">
+            <div className="h-full bg-cyan-950 rounded-lg overflow-hidden py-16" style={{
+      backgroundImage: `
+        linear-gradient(to top right, #4fd1c5, #ecc94b),
+        linear-gradient(to top, #90cdf4, #38b2ac),
+        linear-gradient(to bottom, #feebc8, #d6bcfa)
+      `,
+      backgroundBlendMode: 'overlay'
+    }}>
               <div className="p-6">
                 <h1 className="title-font text-3xl font-bold text-white mb-6">Discover all my Projects</h1>
                 <p className="leading-relaxed text-white text-lg mb-6">I am a Web Developer who loves to create websites.</p>
@@ -287,7 +416,7 @@ const Home = ({ name, email, message, setName, setEmail, setMessage, handleSubmi
             target="_blank"
             rel="noopener noreferrer"
           >
-            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-cyan-950 animate-bounce">
+            <div className="flex items-center justify-center w-10 h-10 rounded-full bg-sky-600 animate-bounce">
               <svg
                 fill="currentColor"
                 stroke="currentColor"
@@ -312,7 +441,7 @@ const Home = ({ name, email, message, setName, setEmail, setMessage, handleSubmi
             rel="noopener noreferrer"
             href="https://github.com/vaishnavibadwaik24"
             title="GitHub"
-            className="flex items-center justify-center w-10 h-10 rounded-full text-gray-50 bg-cyan-950 animate-bounce"
+            className="flex items-center justify-center w-10 h-10 rounded-full text-gray-50 bg-black animate-bounce"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -328,7 +457,6 @@ const Home = ({ name, email, message, setName, setEmail, setMessage, handleSubmi
     </div>
   </div>
 </footer>
-
     {/* End Footer */}
 
   </>
